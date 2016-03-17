@@ -18,6 +18,7 @@ var SongQueue = Songs.extend({
       //if songQueue is only one song, play it. 
       //otherwise do nothing.
     this.on('add', this.check, this);
+    this.on('ended', this.dequeue, this);
   },
 
 
@@ -27,7 +28,11 @@ var SongQueue = Songs.extend({
 
   //end function. removes song from queue 
     //current song 
-
+  dequeue: function() {
+    console.log('remove');
+    var song = this.at(0);
+    this.remove(song);
+  },
   //if length > 1, plays first song
 
 
