@@ -3,53 +3,44 @@
 var SongQueue = Songs.extend({
   //songQueue = new Songqueue( { song });
   initialize: function() {
-    //what happens on initializing songqueue????
 
-    //if there is a song in the Sonqueue? play it
-    // this.on('add', this.playFirst, this);
-    // this.playFirst();
-
-    //check if songQueue has any songs.
-      //play firstSong if it does.
     if (this.length > 0) {
       this.playFirst();
     }
-    //listens to add event and makes a check
-      //if songQueue is only one song, play it. 
-      //otherwise do nothing.
-    this.on('add', this.check, this);
+
+    this.on('add', this.initCheck, this);
     this.on('ended', this.dequeue, this);
+    this.on('ended', this.playNext, this);  
+    this.on('dequeue', this.remove, this);
   },
 
+  playFirst: function() {
+    var firstSong = this.at(0);
+    firstSong.play();
+  },
 
-  //listens for when a song is added
-
-  //play song if it is the only song in queue or first
-
-  //end function. removes song from queue 
-    //current song 
+  initCheck: function(song) {
+    if (this.length === 1) {
+      this.playFirst();
+    } 
+  },
+  
   dequeue: function() {
     console.log('remove');
     var song = this.at(0);
     this.remove(song);
   },
-  //if length > 1, plays first song
 
-
-  //if length === 0. do nothing
-
-  //dequeue -> removes song
-  check: function(song) {
-    if (this.length === 1) {
-      this.playFirst(song);
-    }
+  ended: function() {
+  //   console.log('ended is called');
+  //   if (this.length) {
+  //     this.playFirst();
   },
 
-  //playFirst -> plays first song in queue
-
-  playFirst: function() {
-    var firstSong = this.at(0);
-    firstSong.play();
+  playNext: function() {
+    if (this.length > 0) {
+      this.playFirst();
+    }
   }
 
 

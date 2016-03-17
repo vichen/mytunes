@@ -25,13 +25,13 @@ var AppModel = Backbone.Model.extend({
     }, this);
   },
 
-  play: function(song) {
-    //play the song
+  // play: function(song) {
+  //   //play the song
 
-  },
+  // },
 
-  enqueue: function() {
-    //lines it up for the next to be played
+  // enqueue: function() {
+  //   //lines it up for the next to be played
 
-  }
+  // }
 });
