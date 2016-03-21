@@ -32,7 +32,12 @@ describe('PlayerView', function() {
   });
 
   describe('Song transitions', function() {
+<<<<<<< HEAD
     it('dequeues a song when finished playing & plays the next song', function() {
+=======
+
+    it ('dequeues a song when finished playing & plays the next song', function() {
+>>>>>>> a87e19cdba4dfd1e60c0a0503865a1dc8ca4b3ff
       var firstSong = library.at(0);
       var secondSong = library.at(1);
       var thirdSong = library.at(2);

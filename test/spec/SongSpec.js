@@ -17,21 +17,36 @@ describe('SongModel', function() {
     });
   });
 
+<<<<<<< HEAD
   describe('enqueue', function() {
+=======
+
+  describe ('enqueue', function() {
+>>>>>>> a87e19cdba4dfd1e60c0a0503865a1dc8ca4b3ff
     it('triggers an "enqueue" event', function() {
       model.enqueue();
       expect(model.trigger).to.have.been.calledWith('enqueue', model);
     });
   });
 
+<<<<<<< HEAD
   describe('dequeue', function() {
+=======
+
+  describe ('dequeue', function() {
+>>>>>>> a87e19cdba4dfd1e60c0a0503865a1dc8ca4b3ff
     it('triggers a "dequeue" event', function() {
       model.dequeue();
       expect(model.trigger).to.have.been.calledWith('dequeue', model);
     });
   });
 
+<<<<<<< HEAD
   describe('ended', function() {
+=======
+
+  describe ('ended', function() {
+>>>>>>> a87e19cdba4dfd1e60c0a0503865a1dc8ca4b3ff
     it('triggers an "ended" event', function() {
       model.play();
       model.ended();
